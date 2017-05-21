@@ -1,5 +1,5 @@
 <div class="">
-  <% if @travel.spends.any? %>
+  <% if @travel.spends.any? %> <!-- 지출 내역이 추가되어 있나? -->
       <h3>지출내역</h3>
       <% @travel.spends.each do |spend| %>
           <h4><%= spend.day %>일차</h4>
@@ -8,7 +8,7 @@
           <p>교통비 : <%= spend.trans %>원</p>
           <p>자유경비 : <%= spend.free %>원</p>
           <p>합계 : <%= spend.total %> (추천 하루경비 : <%= @recommand %>원)</p>
-          <% if spend.total > @recommand %>
+          <% if spend.total > @recommand %> <!-- 오늘 쓴 돈이 추천지출양보다 많으면 아껴쓰세요! -->
             <p style="color:red">아껴쓰세요!</p>
           <% end %>
       <% end %>

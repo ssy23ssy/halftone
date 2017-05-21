@@ -2,8 +2,8 @@
   <%= form_for :spend, url: travel_spend_index_path(@travel), method: :post do |f| %>
       <p>오늘 며칠차?</p>
       <select name="day" id="day">
-        <% @travel.period.times do |i| %>
-            <% if @travel.spends.where(day: i+1).blank? %>
+        <% @travel.period.times do |i| %> <!-- 몇일차인지 셀프로 넣어줌 -->
+            <% if @travel.spends.ex_period(i) %> <!-- i+1차가 이미 있으면 옵션에 안뜸 -->
                 <option value="<%= i+1 %>"><%= i+1 %></option>
             <% end %>
         <% end %>

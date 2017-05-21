@@ -16,7 +16,7 @@ class TravelController < ApplicationController
                          sleep: params[:travel][:sleep].to_i,
                          trans: params[:travel][:trans].to_i,
                          free: params[:travel][:free].to_i)
-    @travel.total = @travel.food + @travel.sleep + @travel.trans + @travel.free
+    @travel.total = @travel.food + @travel.sleep + @travel.trans + @travel.free # 토탈합 더해줌
     @travel.save
 
     redirect_to travel_mylist_path
@@ -29,7 +29,7 @@ class TravelController < ApplicationController
 
   def show
     @travel = Travel.find(params[:id])
-    @recommand = @travel.total / @travel.period
+    @recommand = @travel.total / @travel.period # 추천 하루 경비 = 총 경비 / 총 기간
 
   end
 

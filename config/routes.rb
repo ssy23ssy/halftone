@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'spend/new'
-
-  get 'spend/create'
 
   devise_for :users
   root 'travel#index'

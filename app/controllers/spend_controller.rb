@@ -1,4 +1,6 @@
 class SpendController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @travel = Travel.find(params[:travel_id])
 
@@ -8,11 +10,11 @@ class SpendController < ApplicationController
   def create
     @travel = Travel.find(params[:travel_id])
     @spend = @travel.spends.new(food: params[:spend][:food].to_i,
-                                 sleep: params[:spend][:sleep].to_i,
-                                 trans: params[:spend][:trans].to_i,
-                                 free: params[:spend][:free].to_i,
-                                 day: params[:day])
-    @spend.total = @spend.food + @spend.sleep + @spend.trans + @spend.free
+                                sleep: params[:spend][:sleep].to_i,
+                                trans: params[:spend][:trans].to_i,
+                                free: params[:spend][:free].to_i,
+                                day: params[:day])
+    @spend.total = @spend.food + @spend.sleep + @spend.trans + @spend.free # 토탈 더해줌
     @spend.save
 
     redirect_to travel_path(@travel)
