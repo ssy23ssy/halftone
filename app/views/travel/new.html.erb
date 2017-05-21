@@ -33,9 +33,9 @@ h2{
   <p class="tstyle"><%= link_to "홈으로", root_path %></p>
   <%= form_for :travel, url: travel_index_path, method: :post do |f| %>
 
-      <%= link_to "홈으로", root_path %> /
-      <%= link_to "logout", destroy_user_session_path, method: :delete %> /
-      <%= link_to "show", '/travel/mylist' %>
+      <%= link_to "홈으로", root_path %>  /
+      <%= link_to "logout", destroy_user_session_path, method: :delete %>  /
+       <%= link_to "show", '/travel/mylist' %>
 
 
       <div class="all_form">
@@ -46,12 +46,12 @@ h2{
 
         <div class="part_form">
       <div class="form-group">
-        글 제목
-        <%= f.text_field :title, class: "form-control"  %>
-      </div>
-      <div class="form-group">
         국가
         <%= f.text_field :country, class: "form-control" ,placeholder: "예시) 대한민국" %>
+      </div>
+      <div class="form-group">
+        지역
+        <%= f.text_field :title, class: "form-control" ,placeholder: "예시) 서울"  %>
       </div>
       <div class="form-group">
         여행기간
