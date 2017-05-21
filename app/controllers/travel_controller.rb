@@ -29,16 +29,8 @@ class TravelController < ApplicationController
 
   def show
     @travel = Travel.find(params[:id])
+    @recommand = @travel.total / @travel.period
   end
 
-  private
-
-  def travel_params_s
-    params.require(:travel).permit(:title, :country)
-  end
-
-  def travel_params_i
-    params.require(:travel).permit(:period, :food, :sleep, :trans, :free)
-  end
  
 end
