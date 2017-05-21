@@ -1,0 +1,9 @@
+<div class="container">
+  <% @travels.each do |travel| %>
+      <div class="travel">
+        <h3><%= travel.title %></h3>
+        <p><%= travel.country %></p>
+        <p><%= travel.user.email %></p>
+      </div>
+  <% end %>
+</div>
