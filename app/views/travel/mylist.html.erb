@@ -1,9 +1,10 @@
 <div class="container">
   <% @travels.each do |travel| %>
       <div class="travel">
-        <h3><%= travel.title %></h3>
+        <h3><%= link_to "#{travel.title}", travel_path(travel) %></h3>
         <p><%= travel.country %></p>
         <p><%= travel.user.email %></p>
       </div>
   <% end %>
+  <%= link_to "홈", root_path, class: "btn btn-default" %>
 </div>

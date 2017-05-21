@@ -16,10 +16,10 @@ class TravelController < ApplicationController
                          sleep: params[:travel][:sleep].to_i,
                          trans: params[:travel][:trans].to_i,
                          free: params[:travel][:free].to_i)
-    @travel.total = @travel.period + @travel.food + @travel.sleep + @travel.trans + @travel.free
+    @travel.total = @travel.food + @travel.sleep + @travel.trans + @travel.free
     @travel.save
 
-    redirect_to new_travel_path
+    redirect_to travel_mylist_path
   end
 
   def mylist
@@ -28,6 +28,7 @@ class TravelController < ApplicationController
   end
 
   def show
+    @travel = Travel.find(params[:id])
   end
 
   private

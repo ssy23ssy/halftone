@@ -1,0 +1,12 @@
+<div class="container">
+  <h3>여행제목 : <%= @travel.title %></h3>
+  <p>나라 : <%= @travel.country %></p>
+  <p>기간 : <%= @travel.period %>일</p>
+  <p>식비 : <%= @travel.food %>원</p>
+  <p>숙박비 : <%= @travel.sleep %>원</p>
+  <p>교통비 : <%= @travel.trans %>원</p>
+  <p>자유경비 : <%= @travel.free %>원</p>
+  <p>토탈경비 : <%= @travel.total %>원</p>
+
+  <%= link_to "내 여행 목록", travel_mylist_path, class: "btn btn-default" %>
+</div>
