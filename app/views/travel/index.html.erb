@@ -34,7 +34,7 @@
 
 <body>
 
-        <a href ="/users/sign_out">로그아웃</a>
+
     <!-- Navigation -->
     <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
     <nav id="sidebar-wrapper">
@@ -60,6 +60,7 @@
             <br>
             <a href="travel/new" class="btn btn-dark btn-lg">여행지 추가하기</a>
             <a href="travel/mylist"  class="btn btn-dark btn-lg">여행지 보러가기</a>
+          <%= link_to "로그아웃", destroy_user_session_path, class: "btn btn-dark btn-lg" %>
         </div>
     </header>
 

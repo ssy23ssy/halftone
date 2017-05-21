@@ -1,27 +1,40 @@
+<style>
+  @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+  .tstyle {
+    font-family: 'Hanna';
+    font-size: 15px;
+
+  }
+    th{
+      text-align: center;
+    }
+
+</style>
+
 <div class="container">
   <h3>현재 접속중인 email :
     <%= current_user.email %>
   </h3>
 
-  <table class="table table-bordered">
-    <thead>
-    <tr>
+  <table class="table table-bordered "style="border:5px solid white">
+    <thead class="tstyle">
+    <tr style="border-bottom: 5px solid white">
       <th>#</th>
       <th>지역</th>
-      <th>나라</th>
+      <th >나라</th>
     </tr>
     </thead>
 
-    <tbody>
+    <tbody class="tstyle">
     <% @travels.each do |travel| %>
-        <tr>
+        <tr style="border-bottom: 5px solid white">
           <td>
             <%= travel.id %>
           </td>
           <td>
             <%= link_to "#{travel.title}", travel_path(travel) %>
           </td>
-          <td>
+          <td >
             <%= travel.country %>
           </td>
         </tr>

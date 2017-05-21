@@ -1,38 +1,91 @@
-<div class="container">
+<style>
+  .all_form{
+    align-items: flex-end;
+    width: auto;
 
+  }
+  .part_form{
+    border: solid #2E2F30;
+  margin :auto;
+
+    width: 600px;
+  }
+
+h2{
+
+  font-weight: bold;
+
+}
+
+</style>
+
+<div class="container">
+  <style>
+    @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+    .tstyle {
+      font-family: 'Hanna';
+      font-size: 30px;
+      text-align: left;
+    }
+  </style>
+
+
+  <p class="tstyle"><%= link_to "홈으로", root_path %></p>
   <%= form_for :travel, url: travel_index_path, method: :post do |f| %>
+
+      <%= link_to "홈으로", root_path %> /
+      <%= link_to "logout", destroy_user_session_path, method: :delete %> /
+      <%= link_to "show", '/travel/mylist' %>
+
+
+      <div class="all_form">
+        <br>
+
+        <h2>1단계.여행지 정보 등록란</h2>
+        <br>
+
+        <div class="part_form">
       <div class="form-group">
-        <%= f.label :title %>
-        <%= f.text_field :title, class: "form-control" %>
+        글 제목
+        <%= f.text_field :title, class: "form-control"  %>
       </div>
       <div class="form-group">
-        <%= f.label :country %>
-        <%= f.text_field :country, class: "form-control" %>
+        국가
+        <%= f.text_field :country, class: "form-control" ,placeholder: "예시) 대한민국" %>
       </div>
       <div class="form-group">
-        <%= f.label :period %>
-        <%= f.text_field :period, class: "form-control" %>
+        여행기간
+        <%= f.text_field :period, class: "form-control" ,placeholder: " 숫자만 입력하십시오.                  예시)30(o), 30일(x)"%>
      </div>
+</div><br>
+
+        <h2>2단계.세부 지출 비용 입력란</h2>
+        <br>
+
+        <div class="part_form">
       <div class="form-group">
-        <%= f.label :food %>
+        총 식비
         <%= f.text_field :food, class: "form-control" %>
       </div>
       <div class="form-group">
-        <%= f.label :sleep %>
+        총 숙박비
         <%= f.text_field :sleep, class: "form-control" %>
       </div>
       <div class="form-group">
-        <%= f.label :trans %>
+        총 교통비
         <%= f.text_field :trans, class: "form-control" %>
       </div>
       <div class="form-group">
-        <%= f.label :free %>
+         기타 총 자율비
         <%= f.text_field :free, class: "form-control" %>
       </div>
+        </div>
+        <br>
+<br>
       <%= f.submit "제출", class: "btn btn-default" %>
-  <% end %>
 
-  <%= link_to "홈으로", root_path %>
-  <%= link_to "logout", destroy_user_session_path, method: :delete %>
-  <%= link_to "show", '/travel/mylist' %>
+  <% end %>
+ <%= link_to "home", root_path, class: "btn btn-default" %>
+  </div>
+
 </div>

@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170521025828) do
+ActiveRecord::Schema.define(version: 20170521072457) do
+
+  create_table "spends", force: :cascade do |t|
+    t.integer  "day"
+    t.integer  "food"
+    t.integer  "sleep"
+    t.integer  "trans"
+    t.integer  "free"
+    t.integer  "total"
+    t.integer  "travel_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["travel_id"], name: "index_spends_on_travel_id"
+  end
 
   create_table "travels", force: :cascade do |t|
     t.string   "title"
