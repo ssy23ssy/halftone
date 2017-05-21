@@ -77,10 +77,12 @@ h2{
         </div>
         <br>
 <br>
-      <%= f.submit "제출", class: "btn btn-default" %>
+        <div class="btn-group">
+          <%= f.submit "제출", class: "btn btn-default" %>
+          <%= link_to "home", root_path, class: "btn btn-default" %>
+        </div>
 
   <% end %>
- <%= link_to "home", root_path, class: "btn btn-default" %>
   </div>
 
 </div>

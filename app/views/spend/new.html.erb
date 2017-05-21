@@ -3,7 +3,9 @@
       <p>오늘 며칠차?</p>
       <select name="day" id="day">
         <% @travel.period.times do |i| %>
-            <option value="<%= i+1 %>"><%= i+1 %></option>
+            <% if @travel.spends.where(day: i+1).blank? %>
+                <option value="<%= i+1 %>"><%= i+1 %></option>
+            <% end %>
         <% end %>
       </select>
       <div class="form-group">
@@ -26,7 +28,9 @@
         <%= f.label :free %>
         <%= f.text_field :free, class: "form-control" %>
       </div>
-      <%= f.submit "제출", class: "btn btn-default" %>
+      <div class="btn-group">
+        <%= f.submit "제출", class: "btn btn-default" %>
+        <%= link_to "돌아가기", travel_path(@travel), class: "btn btn-default" %>
+      </div>
   <% end %>
-  <%= link_to "돌아가기", travel_path(@travel), class: "btn btn-default" %>
 </div>
