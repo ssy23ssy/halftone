@@ -10,4 +10,6 @@
   <p>하루 추천 경비 : <%= @recommand %>원</p>
 
   <%= link_to "내 여행 목록", travel_mylist_path, class: "btn btn-default" %>
+  <%= link_to "사용한 경비 입력하러 가기", new_travel_spend_path(@travel), class: "btn btn-default" %>
+  <%= link_to "사용한 경비 보기", travel_spend_path(@travel), class: "btn btn-default" %>
 </div>

@@ -30,6 +30,7 @@ class TravelController < ApplicationController
   def show
     @travel = Travel.find(params[:id])
     @recommand = @travel.total / @travel.period
+
   end
 
  

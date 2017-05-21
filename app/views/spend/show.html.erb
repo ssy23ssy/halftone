@@ -1,0 +1,17 @@
+<div class="">
+  <% if @travel.spends.any? %>
+      <h3>지출내역</h3>
+      <% @travel.spends.each do |spend| %>
+          <p><%= spend.day %>일차</p>
+          <p>식비 : <%= spend.food %>원</p>
+          <p>숙박비 : <%= spend.sleep %>원</p>
+          <p>교통비 : <%= spend.trans %>원</p>
+          <p>자유경비 : <%= spend.free %>원</p>
+          <p>합계 : <%= spend.total %> (추천 하루경비 : <%= @recommand %>원)</p>
+      <% end %>
+  <% else %>
+    <h3>추가된 지출내역이 없습니다</h3>
+  <% end %>
+</div>
+
+<%= link_to "돌아가기", travel_path(@travel), class: "btn btn-default" %>
