@@ -33,5 +33,6 @@
   <% end %>
 
   <%= link_to "홈으로", root_path %>
+  <%= link_to "logout", destroy_user_session_path, method: :delete %>
   <%= link_to "show", '/travel/mylist' %>
 </div>
