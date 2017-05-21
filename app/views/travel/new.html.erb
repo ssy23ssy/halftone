@@ -20,7 +20,17 @@ h2{
 </style>
 
 <div class="container">
+  <style>
+    @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+    .tstyle {
+      font-family: 'Hanna';
+      font-size: 30px;
+      text-align: left;
+    }
+  </style>
 
+
+  <p class="tstyle"><%= link_to "홈으로", root_path %></p>
   <%= form_for :travel, url: travel_index_path, method: :post do |f| %>
 
       <%= link_to "홈으로", root_path %> /
@@ -75,7 +85,7 @@ h2{
       <%= f.submit "제출", class: "btn btn-default" %>
 
   <% end %>
-
+ <%= link_to "home", root_path, class: "btn btn-default" %>
   </div>
 
 </div>
