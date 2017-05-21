@@ -32,5 +32,10 @@ class TravelController < ApplicationController
     @recommand = @travel.total / @travel.period
   end
 
+  def update
+    @user = User.find(current_user.id)
+
+  end
+
  
 end

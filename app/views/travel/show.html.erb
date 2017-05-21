@@ -1,13 +1,38 @@
-<div class="container">
-  <h3>여행제목 : <%= @travel.title %></h3>
-  <p>나라 : <%= @travel.country %></p>
-  <p>기간 : <%= @travel.period %>일</p>
-  <p>식비 : <%= @travel.food %>원</p>
-  <p>숙박비 : <%= @travel.sleep %>원</p>
-  <p>교통비 : <%= @travel.trans %>원</p>
-  <p>자유경비 : <%= @travel.free %>원</p>
-  <p>토탈경비 : <%= @travel.total %>원</p>
-  <p>하루 추천 경비 : <%= @recommand %>원</p>
+<style>
+  @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+  .tstyle {
+  font-family: 'Hanna';
+    font-size: 20px;
+  }
+</style>
 
-  <%= link_to "내 여행 목록", travel_mylist_path, class: "btn btn-default" %>
+<div class="container">
+  <h2 class="tstyle">나라:<%= @travel.country %></h2>
+  <table class="table table-bordered" style="border:5px solid white">
+    <thead>
+    <tr class="tstyle" style="border-bottom: 5px solid white">
+      <th >여행 지역: <%= @travel.title %> </th>
+
+    </tr>
+    </thead>
+
+    <tbody class="tstyle">
+          <td>
+            <p>기간 : <%= @travel.period %>일</p>
+            <p>식비 : <%= @travel.food %>원</p>
+            <p>숙박비 : <%= @travel.sleep %>원</p>
+            <p>교통비 : <%= @travel.trans %>원</p>
+            <p>자유경비 : <%= @travel.free %>원</p>
+            <p>토탈경비 : <%= @travel.total %>원</p>
+            <p>하루 추천 경비 : <%= @recommand %>원</p>
+
+
+          </td>
+
+
+    </tbody>
+  </table>
+
+
+  <%= link_to "내 여행 목록", travel_mylist_path, class: "btn btn-primary" %>
 </div>

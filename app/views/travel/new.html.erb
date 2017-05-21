@@ -1,5 +1,15 @@
 <div class="container">
+  <style>
+    @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+    .tstyle {
+      font-family: 'Hanna';
+      font-size: 30px;
+      text-align: left;
+    }
+  </style>
 
+
+  <p class="tstyle"><%= link_to "홈으로", root_path %></p>
   <%= form_for :travel, url: travel_index_path, method: :post do |f| %>
       <div class="form-group">
         <%= f.label :title %>
@@ -29,10 +39,10 @@
         <%= f.label :free %>
         <%= f.text_field :free, class: "form-control" %>
       </div>
-      <%= f.submit "제출", class: "btn btn-default" %>
+      <%= f.submit "제출", class: "btn btn-primary" %>
   <% end %>
 
-  <%= link_to "홈으로", root_path %>
-  <%= link_to "logout", destroy_user_session_path, method: :delete %>
-  <%= link_to "show", '/travel/mylist' %>
+
+  <p class="tstyle"><%= link_to "logout", destroy_user_session_path, method: :delete %>
+    <%= link_to "show", '/travel/mylist' %></p>
 </div>
