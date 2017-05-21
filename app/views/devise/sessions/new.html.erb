@@ -1,11 +1,23 @@
+ <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                       <h1 style="margin-left:30px; font-weight:bold; font-size:100px; color:black;">Welcome to My Travel</h1>
+                       </div> 
+                       
+                  <div class="col-lg-6">
+
+
+<div class="login">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
+    <div class="field" style="font-size: 20px;" >
       <%= f.label :email %><br/>
-      <%= f.email_field :email, autofocus: true %>
+      <%= f.email_field :email, autofocus: true, class: "width_fifty"  %>
+       
     </div>
-    <div class="field">
+    <br>
+    <div class="field" style="font-size: 20px;">
       <%= f.label :password %><br/>
-      <%= f.password_field :password, autocomplete: "off" %>
+      <%= f.password_field :password, autocomplete: "off", class: "width_fifty" %>
     </div>
     <% if devise_mapping.rememberable? -%>
         <div class="field">
@@ -18,3 +30,6 @@
     </div>
 <% end %>
 <%= render "devise/shared/links" %>
+
+</div>
+
