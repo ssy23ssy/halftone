@@ -30,12 +30,7 @@ h2{
   </style>
 
 
-  <p class="tstyle"><%= link_to "홈으로", root_path %></p>
   <%= form_for :travel, url: travel_index_path, method: :post do |f| %>
-
-      <%= link_to "홈으로", root_path %> /
-      <%= link_to "logout", destroy_user_session_path, method: :delete %> /
-      <%= link_to "show", '/travel/mylist' %>
 
 
       <div class="all_form">
