@@ -4,6 +4,7 @@
       <select name="day" id="day"> <!-- 몇일차인지 옵션으로로 직접 넣어줌 -->
         <% @travel.period.times do |i| %> <!-- @travel에 설정된 기간만큼 반복 -->
             <% if @travel.spends.ex_period(i) %> <!-- i+1차가 이미 입력되어 있으면 옵션에 안뜸 -->
+                                                 <!-- ex_period는 spend의 인스턴스 매소드인데 이제 보니 왜 만들었나 싶음... -->
                 <option value="<%= i+1 %>"><%= i+1 %></option>
             <% end %>
         <% end %>
