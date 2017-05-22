@@ -1,9 +1,9 @@
 <div class="container">
   <%= form_for :spend, url: travel_spend_index_path(@travel), method: :post do |f| %>
       <p>오늘 며칠차?</p>
-      <select name="day" id="day">
-        <% @travel.period.times do |i| %> <!-- 몇일차인지 셀프로 넣어줌 -->
-            <% if @travel.spends.ex_period(i) %> <!-- i+1차가 이미 있으면 옵션에 안뜸 -->
+      <select name="day" id="day"> <!-- 몇일차인지 옵션으로로 직접 넣어줌 -->
+        <% @travel.period.times do |i| %> <!-- @travel에 설정된 기간만큼 반복 -->
+            <% if @travel.spends.ex_period(i) %> <!-- i+1차가 이미 입력되어 있으면 옵션에 안뜸 -->
                 <option value="<%= i+1 %>"><%= i+1 %></option>
             <% end %>
         <% end %>
